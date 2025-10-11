@@ -5,10 +5,6 @@ const loginUser = async (req, res) => {
     const { username, password } = req.body;
     const data = await userService.login(username, password);
 
-    if (!data) {
-      return res.status(404).json({ mensaje: 'Usuario o contraseña incorrectos' });
-    }
-
     res.status(200).json({
       mensaje: 'Inicio de sesión exitoso',
       token: data.token,
