@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 8080;
 const { initDb } = require('../back/src/config/dbConfig')
-require('dotenv').config();//ESTO ES PARA Q ANDE EL ENV
+require('dotenv').config();
 
 const playerRouter = require('./src/routes')
 const authRouter = require('./src/routes/authRoutes');

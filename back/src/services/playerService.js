@@ -26,10 +26,10 @@ const getAllPlayer = async (id) => {
     }
 }
 
-const updatePlayer = async (userId, userOptions) => {
+const updatePlayer = async (playerId, userOptions) => {
     try {
         const [numRowUpdates] = await Player.update(userOptions, {
-            where: {id:userId}, 
+            where: {id:playerId}, 
             returning:true 
         }) 
         console.log(`Se actualizaron ${numRowUpdates} filas en a BD`)
