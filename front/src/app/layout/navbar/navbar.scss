@@ -1,0 +1,54 @@
+.header{
+    background-color: rgb(9, 28, 43);
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+}
+
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.imagen_logo{
+    width: 4rem;
+}
+
+.titulo_logo{
+   color: #fff;
+}
+
+.contenedor_li{
+   display: flex;
+   gap: 1rem;
+}
+
+.li{
+    color: #fff;
+    font-size: .9rem;
+    list-style: none;
+    cursor: pointer;
+    font-weight: 550;
+}
+
+.contenedor_login{
+    padding-right: 1rem;
+}
+
+.boton_login{
+    background-color: rgb(32, 113, 233);
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    font-weight: 550;
+}
