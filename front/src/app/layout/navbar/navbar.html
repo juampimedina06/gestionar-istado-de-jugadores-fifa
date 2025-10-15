@@ -1,17 +1,28 @@
 <header class="header">
-    <nav class="navbar">
-        <div class="contenedor_logo">
-            <img class="imagen_logo" src="/assets/logo_futbol.png" alt="">
-            <h2 class="titulo_logo">Futbol manager</h2>    
-            <ul class="contenedor_li">
-                <li class="li" routerLink="">Jugadores</li>
-                <li class="li" routerLink="subir_jugador">Subir jugador</li>
-            </ul>
-        </div>
-        <div class="contenedor_login">
-            <button class="boton_login">
-                iniciar sesion
-            </button>
-        </div>
-    </nav>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav class="navbar">
+    <div class="contenedor_logo">
+      <img class="imagen_logo" src="/assets/logo_futbol.png" alt="">
+      <h2 class="titulo_logo">Futbol manager</h2>
+      <div class="contenedor_nav">
+      <ul class="contenedor_li">
+        <li class="li" routerLink="">Jugadores</li>
+        <li class="li" routerLink="subir-player">Subir jugador</li>
+      </ul>
+    </div>    
+    </div>
+
+    
+    <div class="contenedor_login">
+        <button routerLink="login" class="boton_login">
+          Iniciar sesión
+        </button>
+    </div>
+  </nav>
 </header>
