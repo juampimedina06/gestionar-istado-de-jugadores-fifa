@@ -1,5 +1,5 @@
 .header {
-  background-color: #091c2b;
+  background-color: #0c141b;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
@@ -25,6 +25,7 @@
 
 .imagen_logo {
   width: 3.5rem;
+  cursor: pointer;
 }
 
 .titulo_logo {
@@ -32,6 +33,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .contenedor_li {
@@ -49,8 +51,8 @@
 }
 
 .li:hover {
-  color: #1e90ff;
-  transform: translateY(-2px);
+  color: #a5cdf8;
+  transform: translateY(-3px);
 }
 
 .contenedor_login {
@@ -63,7 +65,7 @@
   border: none;
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 550;
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }

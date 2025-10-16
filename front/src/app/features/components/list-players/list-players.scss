@@ -1,0 +1,133 @@
+.player-table {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #1b232c;
+    border: 1px solid #7c7c7c28;
+    border-radius: 10px;
+}
+
+.player-card {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+.player-card.header {
+    display: none;
+    
+}
+
+.player-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5px;
+}
+
+.parrafo_dato{
+    color:#acabab
+}
+
+.player-card .player-cell:last-child {
+    border-bottom: none;
+}
+
+.player-cell::before {
+    content: attr(data-label);
+    margin-right: 10px;
+}
+
+.player-info {
+    justify-content: flex-start; 
+}
+.player-info::before {
+    display: none; 
+}
+
+.player-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.player-name p {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 550;
+}
+
+.player-name span {
+    font-size: .9em;
+    color: #ccc;
+}
+
+.player-actions {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.btn {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: rgb(35, 112, 255);
+    cursor: pointer;
+    transition: .3s ease;
+    gap: 5px;
+    background-color: transparent;
+}
+
+.btn:hover{
+    color: rgb(109, 181, 248)
+}
+
+
+
+@media (min-width: 768px) {
+    .player-card.header {
+        display: grid; 
+        grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+        background-color: #101922;
+        box-shadow: none;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    .player-card {
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1fr 1.5fr;
+        align-items: center;
+        padding: 10px 15px;
+        border-bottom: 1px solid #9e9e9e2d;
+    }
+
+    .player-cell {
+        border-bottom: none;
+        padding: 5px;
+    }
+
+    .player-cell::before {
+        display: none; 
+    }
+
+    .player-cell p, .player-cell span {
+        text-align: left;
+    }
+
+    .player-actions {
+        justify-content: flex-start; 
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .player-actions .btn span {
+        display: inline;
+    }
+}

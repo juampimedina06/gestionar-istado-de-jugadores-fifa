@@ -1,0 +1,26 @@
+.contenedor_fitrador{
+    display: flex;
+    gap: 1rem;
+}
+
+.filtrador{
+  background-color: #1b232c;
+  border: 1px solid #7c7c7c28;
+  border-radius: 8px;
+  box-sizing: border-box; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffffe0;
+  height: 44px;
+  padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+  .contenedor_fitrador {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .filtrador {
+    width: 100%;
+  }
+}
