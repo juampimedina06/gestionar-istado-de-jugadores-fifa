@@ -1,0 +1,82 @@
+.contenedor_login {
+  background-color: #0c141b;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.contenido_login {
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+}
+
+.titulo_login {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contenido_login p {
+  font-size: 0.9rem;
+  color: #8b949e;
+  margin-top: 1rem;
+}
+
+.contenido_login p a {
+    color: #2e8af3;
+  text-decoration: none;
+}
+
+.contenido_login p a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+input {
+  background-color: #1b232c;
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: #c9d1d9;
+  font-size: 0.95rem;
+  outline: none;
+  border: none;
+}
+
+input::placeholder {
+  color: #8b949e;
+}
+
+button {
+  background-color: #2071e9;
+  border: none;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1b5cc4;
+}
+
+.link_olvido{
+    font-size: 0.85rem;
+    color: #2e8af3;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    display: inline-block;
+    text-align: end;
+}

@@ -34,6 +34,10 @@ const Player = sequelize.define('Player', {
   nationality_name: {
     type: DataTypes.STRING(255),
     allowNull: true
+  },
+  player_traits: {
+    type: DataTypes.STRING(255),
+    allowNull: true
   }
 }, {
   tableName: 'player', 
