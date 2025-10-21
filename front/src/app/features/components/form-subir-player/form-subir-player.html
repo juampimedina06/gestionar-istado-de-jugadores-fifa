@@ -1,0 +1,67 @@
+<div class="contenedor_formulario">
+<form class="formulario" [formGroup]="formPlayer" (ngSubmit)="subirJugador()">
+        <div class="contenedor_inputs">
+            <app-input-reutilizable  
+                [label]="'Nombre y apellido'"
+                [control]="formPlayer.controls.name"
+                [type]="'text'"
+                [placeholder]="'Ej: Lionel Andrés Messi Cuccittini'"
+            />
+            <app-input-reutilizable  
+                [label]="'Posición'"
+                [control]="formPlayer.controls.position"
+                [type]="'text'"
+                [placeholder]="'Posición del jugador'"
+              />
+        </div>
+        <div class="contenedor_inputs">
+            <app-input-reutilizable  
+                [label]="'Club'"
+                [control]="formPlayer.controls.club_name"
+                [type]="'text'"
+                [placeholder]="'Ej: Inter de Miami CF'"
+            />
+            <app-input-reutilizable  
+                [label]="'Nacionalidad'"
+                [type]="'text'"
+                [placeholder]="'Ej: Argentina'"
+                [control]="formPlayer.controls.nationality_name"
+            />
+        </div>
+        <div class="contenedor_inputs">
+            <div class="contenedor_interno">
+                <app-input-reutilizable 
+                [label]="'URL de la foto'"
+                [control]="formPlayer.controls.player_face_url"
+                [type]="'text'"
+                [placeholder]="'Ej: https://...'"
+                 />
+            </div>
+           
+           <div class="contenedor_dos_inputs">
+                <app-input-reutilizable 
+                    [label]="'Versión de FIFA'"
+                    [control]="formPlayer.controls.fifa_version"
+                    [type]="'text'"
+                    [placeholder]="'Ej: FIFA 23'"
+                />
+                <app-input-reutilizable 
+                    [label]="'Actualización de FIFA'"
+                    [control]="formPlayer.controls.fifa_update"
+                    [type]="'text'"
+                    [placeholder]="'Ej: Ultimate Team Summer Refresh'"
+                />
+           </div>
+        </div>
+        <div class="contenedor_textarea">
+            <app-input-reutilizable 
+                [label]="'Descripcion del jugador'"
+                [control]="formPlayer.controls.player_traits"
+                [type]="'textarea'"
+                [placeholder]="'Ej: Dribleador, Cabezazo, etc.'"
+            />
+        </div>
+        <button class="boton_enviar" type="submit" (click)="subirJugador()">Crear jugador</button>
+</form>
+
+</div>

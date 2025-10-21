@@ -1,0 +1,51 @@
+.contenedor_formulario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario{
+    width: 60%;
+}
+
+.contenedor_inputs{
+   display: flex;
+   margin-bottom: 1rem;
+   gap: 3rem;
+}
+
+.contenedor_interno{
+    display: flex;
+    width: 50%;
+}
+
+.contenedor_dos_inputs{
+    display: flex;
+    width: 50%;
+    gap: 3rem;
+}
+
+.contenedor_textarea{
+
+}
+
+@media (max-width: 768px) {
+    .formulario{
+        width: 100%;
+    }
+
+    .contenedor_inputs{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contenedor_dos_inputs{
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .contenedor_interno{
+        width: 100%;
+    }
+}
