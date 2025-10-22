@@ -21,9 +21,11 @@ const getPlayer = async (req, res) => {
 
 const updatePlayer = async ( req, res) => {
   const playerId = req.params.playerId
-  const { fifa_version, fifa_update, player_face_url, long_name, player_positions, club_name,nationality_name } = req.body
+  const { fifa_version, fifa_update, player_face_url, long_name, player_positions, club_name,nationality_name, attacking_finishing, skill_dribbling, attacking_short_passing, power_shot_power, movement_acceleration, defending_standing_tackle, mentality_interceptions, power_strength, defending_marking
+ } = req.body
   try {
-    const newPlayer = await playerService.updatePlayer(playerId, { fifa_version, fifa_update, player_face_url, long_name, player_positions, club_name,nationality_name })
+    const newPlayer = await playerService.updatePlayer(playerId, { fifa_version, fifa_update, player_face_url, long_name, player_positions, club_name,nationality_name, attacking_finishing, skill_dribbling, attacking_short_passing, power_shot_power, movement_acceleration, defending_standing_tackle, mentality_interceptions, power_strength, defending_marking
+ })
     res.status(200).json(newPlayer);
   } catch (error) {
     res.status(500).json({ message: error.message })
@@ -31,7 +33,8 @@ const updatePlayer = async ( req, res) => {
 }
 
 const createPlayer = async (req, res) => {
-    const { fifa_version, fifa_update, player_face_url, long_name, player_positions, club_name,nationality_name } = req.body
+    const { fifa_version, fifa_update, player_face_url, long_name, player_positions, club_name,nationality_name,attacking_finishing, skill_dribbling, attacking_short_passing, power_shot_power, movement_acceleration, defending_standing_tackle, mentality_interceptions, power_strength, defending_marking
+ } = req.body
   try {
     const newPlayer = await playerService.createPlayer({
        fifa_version, 
@@ -40,7 +43,17 @@ const createPlayer = async (req, res) => {
        long_name, 
        player_positions, 
        club_name,
-       nationality_name 
+       nationality_name,
+       attacking_finishing, 
+       skill_dribbling, 
+       attacking_short_passing, 
+       power_shot_power, 
+       movement_acceleration, 
+       defending_standing_tackle, 
+       mentality_interceptions, 
+       power_strength, 
+       defending_marking
+
     })
     res.status(201).json(newPlayer)
   } catch (error) {
