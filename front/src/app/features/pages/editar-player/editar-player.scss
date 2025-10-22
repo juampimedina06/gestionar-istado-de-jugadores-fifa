@@ -1,0 +1,29 @@
+.contenedor_editar_player{
+   background-color: #0c141b;
+   width: 100%;
+  margin: 0 auto;
+}
+
+.contenido_editar_player{
+   max-width: 60%;
+   margin: 0 auto;
+   padding: 4rem 2rem;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   h2{
+    font-weight: 500;
+    font-size: 2.4rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .contenido_editar_player{
+      max-width: 90%;
+      padding: 2rem 1rem;
+      h2{
+         font-size: 1.8rem;
+      }
+   }
+}

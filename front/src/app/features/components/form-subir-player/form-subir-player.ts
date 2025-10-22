@@ -11,6 +11,17 @@ export interface ContenidoSubirPlayer{
   fifa_version: FormControl<string>;
   fifa_update: FormControl<string>;
   player_traits: FormControl<string>;
+
+  attacking_finishing: FormControl<number>;
+  skill_dribbling: FormControl<number>;
+  attacking_short_passing: FormControl<number>;
+  power_shot_power: FormControl<number>;
+  movement_acceleration: FormControl<number>;
+  defending_standing_tackle: FormControl<number>;
+  mentality_interceptions: FormControl<number>;
+  power_strength: FormControl<number>;
+  defending_marking: FormControl<number>;
+
 }
 
 @Component({
@@ -32,6 +43,15 @@ export class FormSubirPlayer {
     fifa_version: this.fb.control('', Validators.required),
     fifa_update: this.fb.control('', Validators.required),
     player_traits: this.fb.control('', Validators.required),
+    attacking_finishing: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    skill_dribbling: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    attacking_short_passing: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    power_shot_power: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    movement_acceleration: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    defending_standing_tackle: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    mentality_interceptions: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    power_strength: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
+    defending_marking: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
   })
 
   subirJugador(){

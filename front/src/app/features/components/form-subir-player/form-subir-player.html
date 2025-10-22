@@ -40,19 +40,80 @@
            
            <div class="contenedor_dos_inputs">
                 <app-input-reutilizable 
-                    [label]="'Versión de FIFA'"
+                    [label]="'Versión'"
                     [control]="formPlayer.controls.fifa_version"
                     [type]="'text'"
                     [placeholder]="'Ej: FIFA 23'"
                 />
                 <app-input-reutilizable 
-                    [label]="'Actualización de FIFA'"
+                    [label]="'Actualizacion'"
                     [control]="formPlayer.controls.fifa_update"
                     [type]="'text'"
-                    [placeholder]="'Ej: Ultimate Team Summer Refresh'"
+                    [placeholder]="'Ej: Summer Update'"
                 />
            </div>
         </div>
+        <div class="contenedor_inputs">
+            <app-input-reutilizable  
+                [label]="'Finalización de ataque'"
+                [control]="formPlayer.controls.attacking_finishing"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Regate habilidoso'"
+                [control]="formPlayer.controls.skill_dribbling"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Pase corto de ataque'"
+                [control]="formPlayer.controls.attacking_short_passing"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+        </div>
+        <div class="contenedor_inputs">   
+            <app-input-reutilizable  
+                [label]="'Potencia de disparo'"
+                [control]="formPlayer.controls.power_shot_power"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Aceleración de movimiento'"
+                [control]="formPlayer.controls.movement_acceleration"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Entrada de defensa en pie'"
+                [control]="formPlayer.controls.defending_standing_tackle"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+        </div>
+        <div class="contenedor_inputs">
+            <app-input-reutilizable  
+                [label]="'Intercepciones mentales'"
+                [control]="formPlayer.controls.mentality_interceptions"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Fuerza de poder'"
+                [control]="formPlayer.controls.power_strength"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Marcaje defensivo'"
+                [control]="formPlayer.controls.defending_marking"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+        </div>
+
         <div class="contenedor_textarea">
             <app-input-reutilizable 
                 [label]="'Descripcion del jugador'"
@@ -61,7 +122,9 @@
                 [placeholder]="'Ej: Dribleador, Cabezazo, etc.'"
             />
         </div>
-        <button class="boton_enviar" type="submit" (click)="subirJugador()">Crear jugador</button>
+        <div class="contenedor_boton">
+            <button class="boton_enviar" type="submit" (click)="subirJugador()">Crear jugador</button>
+        </div>
 </form>
 
 </div>

@@ -5,7 +5,7 @@
 }
 
 .contenido_subir_player{
-   max-width: 1200px;
+   max-width: 60%;
    margin: 0 auto;
    padding: 4rem 2rem;
    color: #fff;
@@ -18,5 +18,15 @@
    }
    p{
       color: #b4b4b4;
+   }
+}
+
+@media (max-width: 768px) {
+   .contenido_subir_player{
+      max-width: 90%;
+      padding: 2rem 1rem;
+      h2{
+         font-size: 1.8rem;
+      }
    }
 }
