@@ -10,7 +10,8 @@ export const routes: Routes = [
     {
         path: '',
         component:Inicio,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        
     },
     {
         path: 'login',
@@ -22,13 +23,13 @@ export const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'editar-player',
+        path: 'editar-player/:id',
         component:EditarPlayer,
         canActivate: [AuthGuard]
 
     },
     {
-        path: 'ver-player',
+        path: 'ver-player/:id',
         component:Player,
         canActivate: [AuthGuard]
 

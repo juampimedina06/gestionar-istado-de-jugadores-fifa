@@ -55,25 +55,6 @@
   transform: translateY(-3px);
 }
 
-.contenedor_login {
-   
-}
-
-.boton_login {
-  background-color: #2071e9;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 550;
-  cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
-}
-
-.boton_login:hover {
-  background-color: #1b5cc4;
-  transform: translateY(-2px);
-}
 
 .menu-toggle {
   display: none;

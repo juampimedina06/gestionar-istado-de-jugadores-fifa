@@ -123,7 +123,8 @@
             />
         </div>
         <div class="contenedor_boton">
-            <button class="boton_enviar" type="submit" (click)="subirJugador()">Crear jugador</button>
+            <button class="boton_enviar" type="submit" (click)="subirJugador()">{{ jugadorEditado ? 'Guardar cambios' : 'Crear jugador' }}</button>
+                
         </div>
 </form>
 

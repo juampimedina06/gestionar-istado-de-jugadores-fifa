@@ -1,3 +1,11 @@
+.virtual-scroll-container {
+  height: 60vh; /* Ejemplo: 60% del alto de la pantalla */
+  // ó
+  // height: 700px; /* Una altura fija */
+  
+  overflow-y: auto;
+}
+
 .player-table {
     max-width: 1200px;
     margin: 0 auto;
@@ -7,16 +15,17 @@
 }
 
 .player-card {
-    padding: 15px;
+    height: 80px; /* <-- Debe coincidir con [itemSize]="80" */
+  
+  /* Es buena idea añadir esto para que el padding/border no afecte la altura */
+  box-sizing: border-box;
     display: flex;
     flex-direction: column;
     border-radius: 10px 10px 0px 0px;
 }
 
-
 .player-card.header {
     display: none;
-    
 }
 
 .player-cell {
@@ -50,7 +59,7 @@
     display: none; 
 }
 
-.player-info img {
+.img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -72,7 +81,6 @@
 .player-actions {
     display: flex;
     gap: 10px;
-    
 }
 
 .btn {
@@ -89,8 +97,6 @@
 .btn:hover{
     color: rgb(109, 181, 248)
 }
-
-
 
 @media (min-width: 768px) {
     .player-card.header {

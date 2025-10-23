@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { InputReutilizable } from "../input-reutilizable/input-reutilizable";
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 export interface ContenidoSubirPlayer{
   name: FormControl<string>;
@@ -34,6 +35,12 @@ export class FormSubirPlayer {
   private fb = inject(NonNullableFormBuilder);
   /*IMPLEMENTAR EL SERVICIO DESPUES*/
 
+    private route = inject(ActivatedRoute);
+
+
+    @Input() jugadorEditado: any = null; 
+
+
   formPlayer : FormGroup<ContenidoSubirPlayer> = this.fb.group({
     name: this.fb.control('', Validators.required),
     position: this.fb.control('', Validators.required),
@@ -53,6 +60,16 @@ export class FormSubirPlayer {
     power_strength: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
     defending_marking: this.fb.control(0, [Validators.required, Validators.min(0), Validators.max(99)]),
   })
+
+   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+        console.log("EL ID DEL JUGADO ES:", id)
+        
+    if (this.jugadorEditado) {
+        
+      
+    }
+  }
 
   subirJugador(){
     if(this.formPlayer.valid){

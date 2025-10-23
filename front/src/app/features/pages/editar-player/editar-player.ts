@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { FormEditarPlayer } from "../../components/form-editar-player/form-editar-player";
+import { FormSubirPlayer } from "../../components/form-subir-player/form-subir-player";
 
 @Component({
   selector: 'app-editar-player',
-  imports: [FormEditarPlayer],
+  imports: [FormSubirPlayer],
   templateUrl: './editar-player.html',
   styleUrl: './editar-player.scss'
 })
 export class EditarPlayer {
+
+
 
 }
