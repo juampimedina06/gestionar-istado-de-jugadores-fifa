@@ -70,10 +70,6 @@ const Player = sequelize.define('Player', {
   power_strength: {
     type: DataTypes.INTEGER,
     allowNull: true
-  },
-  defending_marking: {
-    type: DataTypes.INTEGER,
-    allowNull: true
   }
 }, {
   tableName: 'players', 

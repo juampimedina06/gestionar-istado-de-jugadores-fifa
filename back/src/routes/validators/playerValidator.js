@@ -26,7 +26,6 @@ const createPlayerRules = [
   check('defending_standing_tackle', 'El atributo de entrada de pie es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
   check('mentality_interceptions', 'El atributo de intercepciones es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
   check('power_strength', 'El atributo de fuerza es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
-  check('defending_marking', 'El atributo de marcaje es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 })
 
 ];
 
@@ -48,7 +47,6 @@ const updatePlayerRules = [
   check('defending_standing_tackle').optional().isInt({ min: 0, max: 99 }),
   check('mentality_interceptions').optional().isInt({ min: 0, max: 99 }),
   check('power_strength').optional().isInt({ min: 0, max: 99 }),
-  check('defending_marking').optional().isInt({ min: 0, max: 99 })
 ];
 
 module.exports = {
