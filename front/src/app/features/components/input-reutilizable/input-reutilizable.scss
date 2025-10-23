@@ -16,6 +16,20 @@
   letter-spacing: 0.3px;
 }
 
+.input_login{
+  background-color: #1b232c;
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: #c9d1d9;
+  font-size: 0.95rem;
+  outline: none;
+  border: none;
+}
+
+.input_login::placeholder {
+  color: #8b949e;
+}
+
 .input,
 .textarea {
   width: 100%;

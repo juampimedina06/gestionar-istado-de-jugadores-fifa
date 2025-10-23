@@ -3,7 +3,17 @@
     <label class="label">{{ label() }}</label>
   }
 
-  @switch (type()) {
+  @if(clase()) {
+    <input
+        [class]="clase()"
+        [type]="type()"
+        [placeholder]="placeholder()"
+        [formControl]="control()"
+        (blur)="onTouched()"
+        [class.invalid]="control().invalid && (control().dirty || control().touched)"
+      />
+  }@else{
+@switch (type()) {
     @case ('textarea') {
       <textarea
         class="textarea"
@@ -24,6 +34,8 @@
       />
     }
   }
+  }
+  
 
   @if (control().invalid && (control().dirty || control().touched)) {
     <div class="error-messages">

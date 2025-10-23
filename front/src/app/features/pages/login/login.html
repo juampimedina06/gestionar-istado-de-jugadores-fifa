@@ -3,11 +3,21 @@
     <h2 class="titulo_login">Inicia sesión en tu cuenta</h2>
     <p>¿Aún no tienes una cuenta? <a href="#">Regístrate</a></p>
 
-    <form>
-      <input type="text" placeholder="Nombre de usuario" />
-      <input type="password" placeholder="Contraseña" />
+    <form [formGroup]="form" (ngSubmit)="enviarFormulario()" >
+      <app-input-reutilizable 
+        [type]="'text'"
+        [placeholder]="'Nombre de usuario'"
+        [control]="form.controls.username"
+        [clase]="'input_login'"
+      />
+      <app-input-reutilizable 
+        [type]="'password'"
+        [placeholder]="'Contraseña'"
+        [control]="form.controls.password"
+        [clase]="'input_login'"
+      />
       <a href="#" class="link_olvido">¿Olvidaste tu contraseña?</a>
-      <button>Iniciar sesión</button>
+      <button type="submit" >Iniciar sesión</button>
     </form>
   </div>
 </section>

@@ -12,6 +12,7 @@ export class InputReutilizable {
   type = input<'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'textarea'>('text');
   label = input<string>('');
   placeholder = input<string>('');
+  clase = input<string>('');
 
   onTouched = () => {};
   onChange = (_value: any) => {};

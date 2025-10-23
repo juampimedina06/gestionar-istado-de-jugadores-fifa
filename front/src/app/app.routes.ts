@@ -4,11 +4,13 @@ import { SubirPlayer } from './features/pages/subir-player/subir-player';
 import { Login } from './features/pages/login/login';
 import { EditarPlayer } from './features/pages/editar-player/editar-player';
 import { Player } from './features/pages/player/player';
+import { AuthGuard } from './utils/auth.guard';
 
 export const routes: Routes = [
     {
         path: '',
-        component:Inicio
+        component:Inicio,
+        canActivate: [AuthGuard]
     },
     {
         path: 'login',
@@ -16,14 +18,19 @@ export const routes: Routes = [
     },
     {
         path: 'subir-player',
-        component:SubirPlayer
+        component:SubirPlayer,
+        canActivate: [AuthGuard]
     },
     {
         path: 'editar-player',
-        component:EditarPlayer
+        component:EditarPlayer,
+        canActivate: [AuthGuard]
+
     },
     {
         path: 'ver-player',
-        component:Player
+        component:Player,
+        canActivate: [AuthGuard]
+
     }
 ];
