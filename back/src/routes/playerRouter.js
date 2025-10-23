@@ -11,8 +11,8 @@ const {
   handleValidationErrors,
 } = require('../routes/validators/playerValidator'); 
 
-router.get('/', playerController.getPlayers);
-router.get('/:playerId', playerController.getPlayer)
+router.get('/',verifyToken ,playerController.getPlayers);
+router.get('/:playerId', verifyToken,playerController.getPlayer)
 router.post(
   '/',
   verifyToken,

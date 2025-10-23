@@ -76,7 +76,7 @@ const Player = sequelize.define('Player', {
     allowNull: true
   }
 }, {
-  tableName: 'player', 
+  tableName: 'players', 
   timestamps: false 
 });
 

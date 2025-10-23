@@ -6,6 +6,13 @@ require('dotenv').config();
 
 const { playerRouter, authRouter } = require('./src/routes');
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}))
 
 app.use(express.json());
 app.use('/player', playerRouter);
