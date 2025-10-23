@@ -27,6 +27,9 @@ const createPlayerRules = [
   check('mentality_interceptions', 'El atributo de intercepciones es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
   check('power_strength', 'El atributo de fuerza es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
 
+  check('overall', 'El atributo de overall es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
+  check('potential', 'El atributo de potencial es obligatorio').not().isEmpty().isInt({ min: 0, max: 99 }),
+  check('age', 'La edad es obligatoria').not().isEmpty().isInt({ min: 15, max: 50 }),
 ];
 
 const updatePlayerRules = [
@@ -47,6 +50,10 @@ const updatePlayerRules = [
   check('defending_standing_tackle').optional().isInt({ min: 0, max: 99 }),
   check('mentality_interceptions').optional().isInt({ min: 0, max: 99 }),
   check('power_strength').optional().isInt({ min: 0, max: 99 }),
+
+  check('overall').optional().isInt({ min: 0, max: 99 }),
+  check('potential').optional().isInt({ min: 0, max: 99 }),
+  check('age').optional().isInt({ min: 15, max: 50 }),
 ];
 
 module.exports = {

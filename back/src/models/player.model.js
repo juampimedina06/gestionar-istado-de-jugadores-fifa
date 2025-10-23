@@ -70,6 +70,18 @@ const Player = sequelize.define('Player', {
   power_strength: {
     type: DataTypes.INTEGER,
     allowNull: true
+  },
+  overall:{
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  potential:{
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  age:{
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 }, {
   tableName: 'players', 
