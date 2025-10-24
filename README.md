@@ -14,24 +14,22 @@ Incluye autenticación de usuario y manejo de datos dinámico desde una API REST
 
 2.
 ### Ejecutá el servidor con:
-   ```bash
+
    node app.js
 
 3.
 ### El backend se ejecutará en:
-   ```bash
+
    http://localhost:8080/
 
 
 ### 2️⃣ Frontend
 
 #En otra terminal, posicionate en la carpeta del frontend:
-   ```bash
    cd front
 
 
 #Iniciá el servidor de Angular con:
-   ```bash
    ng serve
 
 
@@ -118,4 +116,3 @@ Descargá el listado filtrado en formato .xlsx
 
 Juan Pablo Medina
 Desarrollador Front-End | Córdoba, Argentina 🇦🇷
-📎 GitHub: juampimedina06
