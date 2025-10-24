@@ -200,10 +200,3 @@ scss
 Juan Pablo Medina
 Desarrollador Front-End 💻
 📍 Córdoba, Argentina
-GitHub: juampimedina06
-
-yaml
-Copiar código
-
----
-
