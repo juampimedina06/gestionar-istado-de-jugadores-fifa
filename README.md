@@ -8,52 +8,47 @@ Backend con API REST y frontend moderno para la gestión.
 
 ## 📁 Estructura del proyecto
 
+```bash
 FutManager/
 │
-├── back/ # Backend (Node.js + Express)
-│ ├── app.js # Punto de entrada
-│ ├── routes/ # Rutas de la API
-│ ├── controllers/ # Controladores
-│ ├── models/ # Modelos MySQL
-│ ├── middlewares/ # Middleware (auth, validaciones, etc.)
-│ ├── config/ # Configuración DB y entorno
-│ └── package.json
+├── back/                  # Backend (Node.js + Express)
+│   ├── app.js             # Punto de entrada
+│   ├── routes/            # Rutas de la API
+│   ├── controllers/       # Controladores
+│   ├── models/            # Modelos MySQL
+│   ├── middlewares/       # Middleware (auth, validaciones, etc.)
+│   ├── config/            # Configuración DB y entorno
+│   └── package.json
 │
-├── front/ # Frontend (Angular 20)
-│ ├── src/
-│ │ ├── app/
-│ │ │ ├── components/
-│ │ │ ├── pages/
-│ │ │ ├── services/
-│ │ │ └── models/
-│ │ └── main.ts
-│ └── package.json
+├── front/                 # Frontend (Angular 20)
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── services/
+│   │   │   └── models/
+│   │   └── main.ts
+│   └── package.json
 │
 └── README.md
+🚀 Cómo correr el proyecto
+🛠 Backend
+Entrá al directorio del backend:
 
-yaml
+bash
 Copiar código
-
----
-
-## 🚀 Cómo correr el proyecto
-
-### 🛠 Backend
-
-1. Entrá al directorio del backend  
-   ```bash
-   cd back
-Instalá las dependencias
+cd back
+Instalá las dependencias:
 
 bash
 Copiar código
 npm install
-Creá la base de datos en MySQL
+Creá la base de datos en MySQL:
 
 sql
 Copiar código
 CREATE DATABASE futmanager;
-Configurá el archivo .env con tus credenciales
+Configurá el archivo .env con tus credenciales:
 
 env
 Copiar código
@@ -63,35 +58,37 @@ DB_PASSWORD=tu_contraseña
 DB_NAME=futmanager
 PORT=8080
 JWT_SECRET=clave_re_picante
-Corré el servidor
+Corré el servidor:
 
 bash
 Copiar código
 node app.js
-o, si usás nodemon,
+o, si usás nodemon:
 
 bash
 Copiar código
 npm run dev
-El backend arranca en 👉 http://localhost:8080
+🟢 El backend arranca en:
+http://localhost:8080
 
 💻 Frontend
-Entrá al directorio del front
+Entrá al directorio del frontend:
 
 bash
 Copiar código
 cd front
-Instalá las dependencias
+Instalá las dependencias:
 
 bash
 Copiar código
 npm install
-Corré Angular
+Corré Angular:
 
 bash
 Copiar código
 ng serve
-El frontend arranca en 👉 http://localhost:4200
+🟢 El frontend arranca en:
+http://localhost:4200
 
 🧩 Endpoints de la API
 🔐 Autenticación
@@ -106,6 +103,13 @@ Copiar código
 {
   "email": "admin@example.com",
   "password": "123456"
+}
+Respuesta:
+
+json
+Copiar código
+{
+  "token": "jwt_generado_aca"
 }
 ⚽ Jugadores
 Método	Ruta	Descripción
@@ -156,20 +160,17 @@ El proyecto está pensado para correr backend en el puerto 8080 y frontend en el
 
 💬 Scripts disponibles
 Backend
-
 bash
 Copiar código
 npm start        # corre con node
 npm run dev      # corre con nodemon
 Frontend
-
 bash
 Copiar código
 ng serve         # levanta el proyecto Angular
 ng build         # genera la build de producción
 📦 Dependencias principales
 Backend
-
 express
 
 mysql2
@@ -185,7 +186,6 @@ dotenv
 nodemon (dev)
 
 Frontend
-
 @angular/core
 
 @angular/router
@@ -200,3 +200,4 @@ scss
 Juan Pablo Medina
 Desarrollador Front-End 💻
 📍 Córdoba, Argentina
+GitHub: juampimedina06
