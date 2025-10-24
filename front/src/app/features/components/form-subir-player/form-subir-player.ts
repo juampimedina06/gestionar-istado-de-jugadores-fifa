@@ -44,6 +44,8 @@ export class FormSubirPlayer {
   private playerService = inject(PlayerService);
 
   idJugador: number | null = null;
+backendErrors: { [key: string]: string } = {};
+
 
   @Input() jugadorEditado: boolean | null = null;
 
@@ -129,10 +131,15 @@ export class FormSubirPlayer {
 
 
          },
-        error: (err) => {
-          console.error('Error al crear jugador:', err) 
-          console.log(datosJugador)
-        }
+       error: (err) => {
+  if (err.error?.errors) {
+    this.backendErrors = {};
+    err.error.errors.forEach((e: any) => {
+      const field = e.path; // el campo que falló según express-validator
+      this.backendErrors[field] = e.msg; // el mensaje del error
+    });
+  }
+}
       });
     }
   }

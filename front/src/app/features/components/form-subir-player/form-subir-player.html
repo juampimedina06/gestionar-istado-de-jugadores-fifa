@@ -1,32 +1,54 @@
 <div class="contenedor_formulario">
 <form class="formulario" [formGroup]="formPlayer" (ngSubmit)="subirJugador()">
         <div class="contenedor_inputs">
-            <app-input-reutilizable  
+            <div class="contendor_input">
+                <app-input-reutilizable  
                 [label]="'Nombre y apellido'"
                 [control]="formPlayer.controls.long_name"
                 [type]="'text'"
                 [placeholder]="'Ej: Lionel Andrés Messi Cuccittini'"
             />
-            <app-input-reutilizable  
+            @if (backendErrors['long_name']) {
+              <div class="error">{{ backendErrors['long_name'] }}</div>
+              }
+            </div>
+            <div class="contendor_input">
+                <app-input-reutilizable  
                 [label]="'Posición'"
                 [control]="formPlayer.controls.player_positions"
                 [type]="'text'"
                 [placeholder]="'Posición del jugador'"
               />
+              @if (backendErrors['player_positions']) {
+        <div class="error">{{ backendErrors['player_positions'] }}</div>
+             }
+            </div>
+            
         </div>
         <div class="contenedor_inputs">
-            <app-input-reutilizable  
+            <div class="contendor_input">
+                <app-input-reutilizable  
                 [label]="'Club'"
                 [control]="formPlayer.controls.club_name"
                 [type]="'text'"
                 [placeholder]="'Ej: Inter de Miami CF'"
             />
-            <app-input-reutilizable  
+            @if (backendErrors['club_name']) {
+        <div class="error">{{ backendErrors['club_name'] }}</div>
+      }
+            </div>
+            <div class="contendor_input">
+                  <app-input-reutilizable  
                 [label]="'Nacionalidad'"
                 [type]="'text'"
                 [placeholder]="'Ej: Argentina'"
                 [control]="formPlayer.controls.nationality_name"
             />
+            @if (backendErrors['nationality_name']) {
+        <div class="error">{{ backendErrors['nationality_name'] }}</div>
+      }
+            </div>
+            
         </div>
         <div class="contenedor_inputs">
             <div class="contenedor_interno">
@@ -36,42 +58,66 @@
                 [type]="'text'"
                 [placeholder]="'Ej: https://...'"
                  />
+                @if (backendErrors['player_face_url']) {
+          <div class="error">{{ backendErrors['player_face_url'] }}</div>
+        }
             </div>
            
            <div class="contenedor_dos_inputs">
-                <app-input-reutilizable 
+            <div class="contendor_input">
+<app-input-reutilizable 
                     [label]="'Versión'"
                     [control]="formPlayer.controls.fifa_version"
                     [type]="'text'"
                     [placeholder]="'Ej:23'"
                 />
-                <app-input-reutilizable 
+                @if (backendErrors['fifa_version']) {
+          <div class="error">{{ backendErrors['fifa_version'] }}</div>
+        }
+            </div>
+                <div class="contendor_input">
+<app-input-reutilizable 
                     [label]="'Actualizacion'"
                     [control]="formPlayer.controls.fifa_update"
                     [type]="'text'"
                     [placeholder]="'Ej: Summer Update'"
                 />
+                @if (backendErrors['fifa_update']) {
+          <div class="error">{{ backendErrors['fifa_update'] }}</div>
+        }
+                </div>
+                
            </div>
         </div>
         <div class="contenedor_inputs">
-            <app-input-reutilizable  
+            
+<app-input-reutilizable  
                 [label]="'Finalización de ataque'"
                 [control]="formPlayer.controls.attacking_finishing"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+            @if (backendErrors['attacking_finishing']) {
+        <div class="error">{{ backendErrors['attacking_finishing'] }}</div>
+      }
             <app-input-reutilizable  
                 [label]="'Regate habilidoso'"
                 [control]="formPlayer.controls.skill_dribbling"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+            @if (backendErrors['skill_dribbling']) {
+        <div class="error">{{ backendErrors['skill_dribbling'] }}</div>
+      }
             <app-input-reutilizable  
                 [label]="'Pase corto de ataque'"
                 [control]="formPlayer.controls.attacking_short_passing"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+             @if (backendErrors['attacking_short_passing']) {
+        <div class="error">{{ backendErrors['attacking_short_passing'] }}</div>
+      }
         </div>
         <div class="contenedor_inputs">   
             <app-input-reutilizable  
@@ -80,18 +126,27 @@
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+            @if (backendErrors['power_shot_power']) {
+        <div class="error">{{ backendErrors['power_shot_power'] }}</div>
+      }
             <app-input-reutilizable  
                 [label]="'Aceleración de movimiento'"
                 [control]="formPlayer.controls.movement_acceleration"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+             @if (backendErrors['movement_acceleration']) {
+        <div class="error">{{ backendErrors['movement_acceleration'] }}</div>
+      }
             <app-input-reutilizable  
                 [label]="'Entrada de defensa en pie'"
                 [control]="formPlayer.controls.defending_standing_tackle"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+            @if (backendErrors['defending_standing_tackle']) {
+        <div class="error">{{ backendErrors['defending_standing_tackle'] }}</div>
+      }
         </div>
         <div class="contenedor_inputs">
             <app-input-reutilizable  
@@ -100,33 +155,52 @@
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+             @if (backendErrors['mentality_interceptions']) {
+        <div class="error">{{ backendErrors['mentality_interceptions'] }}</div>
+      }
             <app-input-reutilizable  
                 [label]="'Fuerza de poder'"
                 [control]="formPlayer.controls.power_strength"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+             @if (backendErrors['power_strength']) {
+        <div class="error">{{ backendErrors['power_strength'] }}</div>
+      }
             <app-input-reutilizable  
-                [label]="'Overall'"
+                [label]="'Habilidad general'"
                 [control]="formPlayer.controls.overall"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
+            @if (backendErrors['overall']) {
+        <div class="error">{{ backendErrors['overall'] }}</div>
+      }
         </div>
 
         <div class="contenedor_inputs">
             <app-input-reutilizable  
-                [label]="'Potential'"
+                [label]="'Potencial'"
                 [control]="formPlayer.controls.potential"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
             />
-            <app-input-reutilizable  
-                [label]="'Age'"
+            @if (backendErrors['potential']) {
+        <div class="error">{{ backendErrors['potential'] }}</div>
+      }
+           
+                  <div class="contendor_input">
+ <app-input-reutilizable  
+                [label]="'Edad'"
                 [control]="formPlayer.controls.age"
                 [type]="'number'"
                 [placeholder]="'Edad del jugador'"
             />
+            @if (backendErrors['age']) {
+        <div class="error">{{ backendErrors['age'] }}</div>
+      }
+                  </div>
+
         </div>
 
         <div class="contenedor_textarea">
@@ -136,6 +210,9 @@
                 [type]="'textarea'"
                 [placeholder]="'Ej: Dribleador, Cabezazo, etc.'"
             />
+            @if (backendErrors['player_traits']) {
+        <div class="error">{{ backendErrors['player_traits'] }}</div>
+      }
         </div>
         <div class="contenedor_boton">
             <button class="boton_enviar" type="submit" (click)="subirJugador()">{{ jugadorEditado ? 'Guardar cambios' : 'Crear jugador' }}</button>

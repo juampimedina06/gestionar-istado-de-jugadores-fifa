@@ -8,14 +8,31 @@
     width: 100%;
 }
 
+
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
 .contenedor_inputs{
    display: flex;
    margin-bottom: 1.5rem;
    gap: 3rem;
+   width: 100%;
+}
+
+.contendor_input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .contenedor_interno{
     display: flex;
+    flex-direction: column;
     width: 50%;
 }
 

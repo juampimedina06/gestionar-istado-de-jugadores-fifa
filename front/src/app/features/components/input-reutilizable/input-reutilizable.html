@@ -23,6 +23,16 @@
         [class.invalid]="control().invalid && (control().dirty || control().touched)"
       ></textarea>
     }
+    @case ('imagen') {
+    <input
+      class="input"
+      type="file"
+      accept="image/*"
+      (change)="onFileSelected($event)"
+      (blur)="onTouched()"
+      [class.invalid]="control().invalid && (control().dirty || control().touched)"
+    />
+  }
     @default {
       <input
         class="input"

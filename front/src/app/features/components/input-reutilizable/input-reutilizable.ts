@@ -9,7 +9,7 @@ import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/fo
 })
 export class InputReutilizable {
  control = input.required<FormControl<any>>();
-  type = input<'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'textarea'>('text');
+  type = input<'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'textarea' | 'imagen'>('text');
   label = input<string>('');
   placeholder = input<string>('');
   clase = input<string>('');
@@ -41,4 +41,12 @@ export class InputReutilizable {
   setDisabledState(isDisabled: boolean): void {
     isDisabled ? this.control().disable() : this.control().enable();
   }
+
+  onFileSelected(event: Event) {
+  const file = (event.target as HTMLInputElement).files?.[0];
+  if (file) {
+    // ejemplo: guardarlo en el control del formulario
+    this.control().setValue(file);
+  }
+}
 }
