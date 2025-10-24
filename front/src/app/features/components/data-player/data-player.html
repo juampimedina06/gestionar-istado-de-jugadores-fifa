@@ -19,9 +19,37 @@
 
    <div class="skills-section">
       <h2>Habilidades del jugador</h2>
-      <div>
-        Componentes graficos
+      <div class="contenedor_graficos">
+        <div>
+          <h4 class="titulo_grafico">Ataque</h4>
+          <app-grafico  
+            [labels]="tituloAtaque"
+            [datasets]="[
+                {
+                  label: 'Habilidades de ataque',
+                  data: [finalizacionAtaque, regate, paseCorto, potenciaDisparo,aceleracion],
+                  backgroundColor: 'rgba(4, 63, 112, 0.2)',
+                  borderColor: 'rgba(99, 211, 255, 1)',
+               }
+            ]"
+          />
+        </div>
+        <div>
+          <h4 class="titulo_grafico">Defensa</h4>
+          <app-grafico  
+            [labels]="tituloDefensa"
+            [datasets]="[
+                {
+                    label: 'Habilidades de defensa',
+                    data: [entrada,interceptaciones, fuerza],
+                    backgroundColor: 'rgba(4, 108, 112, 0.2)',
+                    borderColor: 'rgb(99, 255, 208)',
+                }
+            ]"
+          />
+        </div>
       </div>
+      
    </div>
 
    <div class="game-info-section">

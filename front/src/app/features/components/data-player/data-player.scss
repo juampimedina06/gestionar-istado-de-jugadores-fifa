@@ -55,8 +55,15 @@
     padding: 1rem 0;
     border-bottom: 1px solid ;
       border-bottom: 1px solid #3a4a5a;
-
 }
+
+.contenedor_graficos{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+}
+
 
 .game-info-section {
   display: flex;
@@ -95,5 +102,13 @@
   color: #f0f0f0;
   margin: 0;
     font-weight: bold;
+
+}
+
+@media (max-width: 768px) {
+.contenedor_graficos{
+  display: flex;
+  flex-direction: column;
+ }
 
 }
