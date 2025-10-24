@@ -41,8 +41,6 @@ Accedé a la aplicación desde tu navegador: http://localhost:4200/
 🔐 Login
 
 #Para acceder a la aplicación, utilizá las siguientes credenciales:
-
-   ```bash
    Usuario: juampi
    Contraseña: medina123
 
