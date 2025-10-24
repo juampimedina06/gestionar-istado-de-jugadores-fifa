@@ -1,3 +1,8 @@
+## 🙋‍♂️ Presentación
+
+Hola! Soy **Juan Pablo Medina**, desarrollador Front-End de Córdoba, Argentina 🇦🇷, tengo 19 años y estudio desarrollo de software en itsc, elegi el proyecto FIFA HOMBRES, e documentado el proyecto por tiktok de forma organica
+#link: https://www.tiktok.com/@juampi.medina7
+
 # ⚽ LISTADO FIFA - Proyecto Full Stack
 
 Aplicación desarrollada con **Node.js**, **Express**, **MySQL** y **Angular**, que permite gestionar un listado de jugadores, filtrarlos y descargar la información en formato **.xlsx**.  
@@ -72,7 +77,7 @@ Cuenta con un botón que permite descargar únicamente los jugadores filtrados e
 ✅ Interfaz moderna y responsive
 Desarrollada con Angular 20 y estilos adaptativos.
 
-⚙️ Tecnologías utilizadas
+⚙️ Aprenzidajes logrados
 
 Frontend:
 
