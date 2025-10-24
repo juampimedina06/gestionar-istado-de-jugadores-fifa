@@ -1,0 +1,45 @@
+<div class="contenedor_data">
+
+   <div class="player-header">
+    <img *ngIf="jugador?.player_face_url" 
+     [ngSrc]="jugador.player_face_url"  
+     [alt]="jugador.long_name || 'Foto del jugador'"
+     width="100" 
+     height="100"
+     class="player-image" 
+     referrerpolicy="no-referrer" />
+     
+    <div class="player-details">
+        <h2> {{jugador.long_name}} </h2>
+        <p><span>Edad:</span> {{jugador.age}} </p>
+        <p><span>Club:</span> {{jugador.club_name}} | <span>Nacionalidad:</span> {{jugador.nationality_name}} </p>
+        <p><span>Descripcion:</span> {{jugador.player_traits}} </p>
+    </div>
+   </div>
+
+   <div class="skills-section">
+      <h2>Habilidades del jugador</h2>
+      <div>
+        Componentes graficos
+      </div>
+   </div>
+
+   <div class="game-info-section">
+    <h2>Informacion del Juego</h2>
+
+    <div class="info-block">
+        <h3>Posiciones</h3>
+        <p> {{jugador.player_positions}} </p>
+    </div> 
+
+    <div class="info-block">
+        <h3>Version actualizada</h3>
+        <p>Actualizacion {{jugador.fifa_update}} </p>
+    </div>
+    <div class="info-block">
+        <h3>Version de FIFA</h3>
+        <p>FIFA {{jugador.fifa_version}} </p>
+    </div>
+   </div>
+
+</div>

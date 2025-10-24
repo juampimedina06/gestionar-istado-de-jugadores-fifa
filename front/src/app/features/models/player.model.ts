@@ -1,20 +1,22 @@
 export interface Player {
-  id: number;
+  id: number ;
   fifa_version: string;
   fifa_update: string;
   player_face_url: string;
   long_name: string;
   player_positions: string;
-  club_name: string | null;
-  nationality_name: string | null;
-  player_traits: string | null;
-  attacking_finishing: number | null;
-  skill_dribbling: number | null;
-  attacking_short_passing: number | null;
-  power_shot_power: number | null;
-  movement_acceleration: number | null;
-  defending_standing_tackle: number | null;
-  mentality_interceptions: number | null;
-  power_strength: number | null;
-  defending_marking: number | null;
+  club_name: string ;
+  nationality_name: string ;
+  player_traits: string ;
+  attacking_finishing: number ;
+  skill_dribbling: number ;
+  attacking_short_passing: number ;
+  power_shot_power: number ;
+  movement_acceleration: number;
+  defending_standing_tackle: number ;
+  mentality_interceptions: number;
+  power_strength: number ;
+  overall:number;
+  potential:number;
+  age:number;
 }

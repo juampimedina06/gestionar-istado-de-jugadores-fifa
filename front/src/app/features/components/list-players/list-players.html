@@ -18,7 +18,15 @@
       <div *cdkVirtualFor="let player of players; trackBy: trackById" class="player-card">
         
             <div class="player-cell player-info" data-label="Jugador">
-<img class="img" [attr.src]="player.player_face_url" alt="Foto de Jugador">
+          
+<img *ngIf="player?.player_face_url" 
+     [ngSrc]="player.player_face_url"  
+     [alt]="player.long_name || 'Foto del jugador'"
+     width="50" 
+     height="50"
+     class="player-image" 
+     referrerpolicy="no-referrer" />
+
                 <div class="player-name">
                     <p>{{player.long_name}} </p>
                     <span>FIFA {{player.fifa_version}}</span>

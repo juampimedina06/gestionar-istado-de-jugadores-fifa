@@ -16,8 +16,11 @@
         [control]="form.controls.password"
         [clase]="'input_login'"
       />
-      <a href="#" class="link_olvido">¿Olvidaste tu contraseña?</a>
+      @if(errorLogin){
+      <span class="mensaje_error"> {{errorLogin}} </span>
+    }@else {<a href="#" class="link_olvido">¿Olvidaste tu contraseña?</a>}
       <button type="submit" >Iniciar sesión</button>
     </form>
+    
   </div>
 </section>

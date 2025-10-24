@@ -3,13 +3,13 @@
         <div class="contenedor_inputs">
             <app-input-reutilizable  
                 [label]="'Nombre y apellido'"
-                [control]="formPlayer.controls.name"
+                [control]="formPlayer.controls.long_name"
                 [type]="'text'"
                 [placeholder]="'Ej: Lionel Andrés Messi Cuccittini'"
             />
             <app-input-reutilizable  
                 [label]="'Posición'"
-                [control]="formPlayer.controls.position"
+                [control]="formPlayer.controls.player_positions"
                 [type]="'text'"
                 [placeholder]="'Posición del jugador'"
               />
@@ -43,7 +43,7 @@
                     [label]="'Versión'"
                     [control]="formPlayer.controls.fifa_version"
                     [type]="'text'"
-                    [placeholder]="'Ej: FIFA 23'"
+                    [placeholder]="'Ej:23'"
                 />
                 <app-input-reutilizable 
                     [label]="'Actualizacion'"
@@ -107,10 +107,25 @@
                 [placeholder]="'0 - 99'"
             />
             <app-input-reutilizable  
-                [label]="'Marcaje defensivo'"
-                [control]="formPlayer.controls.defending_marking"
+                [label]="'Overall'"
+                [control]="formPlayer.controls.overall"
                 [type]="'number'"
                 [placeholder]="'0 - 99'"
+            />
+        </div>
+
+        <div class="contenedor_inputs">
+            <app-input-reutilizable  
+                [label]="'Potential'"
+                [control]="formPlayer.controls.potential"
+                [type]="'number'"
+                [placeholder]="'0 - 99'"
+            />
+            <app-input-reutilizable  
+                [label]="'Age'"
+                [control]="formPlayer.controls.age"
+                [type]="'number'"
+                [placeholder]="'Edad del jugador'"
             />
         </div>
 

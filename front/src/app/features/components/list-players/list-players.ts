@@ -3,12 +3,13 @@ import { RouterLink } from "@angular/router";
 import { Player } from '../../models/player.model';
 import { PlayerService } from '../../services/playerService/player-service';
 import { CdkFixedSizeVirtualScroll, CdkVirtualForOf, CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 
 @Component({
   standalone: true,
   selector: 'app-list-players',
-  imports: [RouterLink, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll,CdkVirtualForOf,],
+  imports: [RouterLink, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll,CdkVirtualForOf,NgOptimizedImage, CommonModule],
   templateUrl: './list-players.html',
   styleUrl: './list-players.scss'
 })
@@ -34,13 +35,15 @@ export class ListPlayers implements OnInit {
           player_face_url: player.player_face_url,
           attacking_finishing: player.attacking_finishing,
           attacking_short_passing: player.attacking_short_passing,
-          defending_marking: player.defending_marking,
           defending_standing_tackle: player.defending_standing_tackle,
           mentality_interceptions: player.mentality_interceptions,
           movement_acceleration: player.movement_acceleration,
           power_shot_power: player.power_shot_power,
           power_strength: player.power_strength,
-          skill_dribbling: player.skill_dribbling
+          skill_dribbling: player.skill_dribbling,
+          overall: player.overall,
+          potential: player.potential,
+          age: player.age
         }));
       },
       error: (err) => {

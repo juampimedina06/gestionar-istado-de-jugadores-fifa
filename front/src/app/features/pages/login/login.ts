@@ -26,6 +26,8 @@ export class Login {
     password: this.fb.control('', Validators.required)
   });
 
+  errorLogin: string = "" 
+
   enviarFormulario(){
     if(this.form.invalid) return;
 
@@ -38,6 +40,7 @@ export class Login {
       error: (err) => {
         console.error('Error en el login:', err);
         console.log(user)
+        this.errorLogin = 'Usuario o contraseña incorrectos';
       }
     });
   }

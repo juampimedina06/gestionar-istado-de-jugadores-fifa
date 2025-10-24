@@ -1,0 +1,99 @@
+.contenedor_data {
+    background-color: #1b232c;
+  border-radius: 10px;
+  margin-top: 2rem;
+  padding: 2rem;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #f0f0f0; 
+}
+
+
+
+.contenedor_data h2 {
+  font-size: 1.75rem; 
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+.contenedor_data h3 {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin: 0 0 0.5rem 0;
+  font-weight: normal;
+}
+.contenedor_data p {
+  font-size: 0.9rem;
+  color: #f0f0f096;
+  margin: 0.25rem 0;
+}
+.contenedor_data span {
+  color: #a5aaaf;
+  font-weight: normal;
+  margin-right: 0.25em;
+  font-weight:550;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid #3a4a5a;
+  padding-bottom: 1.5rem;
+}
+.player-header img {
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+.player-details {
+  flex: 1; 
+}
+
+
+.skills-section {
+    padding: 1rem 0;
+    border-bottom: 1px solid ;
+      border-bottom: 1px solid #3a4a5a;
+
+}
+
+.game-info-section {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 0 1.5rem; 
+  margin-top: 1.5rem;
+}
+.game-info-section h2 {
+  flex-basis: 100%;
+  font-size: 1.25rem;
+  margin-bottom: 1rem; 
+}
+
+
+
+.game-info-section .info-block {
+  flex: 1;
+  min-width: 150px;
+}
+
+.info-block{
+    border-left: 5px solid rgb(6, 74, 141);
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.info-block h3 {
+  font-size: 0.9rem;
+  color: #91959b; 
+  margin: 0 0 0.25rem 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.info-block p {
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin: 0;
+    font-weight: bold;
+
+}
