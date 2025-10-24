@@ -6,6 +6,8 @@ import { CdkFixedSizeVirtualScroll, CdkVirtualForOf, CdkVirtualScrollViewport } 
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { InputReutilizable } from "../input-reutilizable/input-reutilizable";
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 
 export interface InputFiltrador {
   filtrador: FormControl<string>;
@@ -86,6 +88,23 @@ export class ListPlayers implements OnInit {
 
   trackById(index: number, player: Player): string | number {
     return player.id;
+  }
+
+  descargarCSV(): void {
+    if (this.filteredPlayers.length === 0) {
+      alert("No hay jugadores para exportar ");
+      return;
+    }
+
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.filteredPlayers);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Jugadores");
+
+    const csvData = XLSX.utils.sheet_to_csv(ws);
+
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    saveAs(blob, 'jugadores_filtrados.csv');
   }
 
 }
