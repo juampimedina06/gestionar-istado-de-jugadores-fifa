@@ -1,144 +1,121 @@
-# ⚽ FutManager
+# ⚽ LISTADO FIFA - Proyecto Full Stack
 
-**FutManager** es una aplicación completa (Full Stack) para la gestión de jugadores de fútbol, desarrollada con **Node.js**, **Express**, **MySQL** y **Angular 20**.  
-Permite **crear**, **editar**, **eliminar** y **listar** jugadores con todos sus atributos tipo FIFA.
-
----
-
-## 🧱 Estructura del Proyecto
-
-FutManager/
-│
-├── back/ # Backend (Node.js + Express)
-│ ├── app.js # Punto de entrada del servidor
-│ ├── routes/ # Rutas de la API
-│ ├── controllers/ # Controladores
-│ ├── models/ # Modelos de base de datos
-│ ├── middlewares/ # Validaciones, auth, etc.
-│ ├── config/ # Configuraciones (DB, entorno)
-│ └── package.json
-│
-└── front/ # Frontend (Angular 20)
-├── src/app/components/
-├── src/app/pages/
-├── src/app/services/
-├── src/app/models/
-├── main.ts
-└── package.json
-
-yaml
-Copiar código
+Aplicación desarrollada con **Node.js**, **Express**, **MySQL** y **Angular**, que permite gestionar un listado de jugadores, filtrarlos y descargar la información en formato **.xlsx**.  
+Incluye autenticación de usuario y manejo de datos dinámico desde una API REST.
 
 ---
 
-## ⚙️ Configuración del Backend
+## 🚀 Cómo ejecutar el proyecto
 
-### 🔸 Instalación
+### 1️⃣ Backend
+1. Abrí una terminal y posicionate en la carpeta del **backend**:
+   ```bash
+   cd back
 
-```bash
-cd back
-npm install
-🔸 Base de datos MySQL
-Ejecutá en tu gestor de MySQL:
+2.
+### Ejecutá el servidor con:
+   ```bash
+   node app.js
 
-sql
-Copiar código
-CREATE DATABASE futmanager;
-🔸 Archivo .env
-Creá un archivo .env dentro de la carpeta back/ con los siguientes valores:
+3.
+### El backend se ejecutará en:
+   ```bash
+   http://localhost:8080/
 
-env
-Copiar código
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=tu_contraseña
-DB_NAME=futmanager
-PORT=8080
-JWT_SECRET=clave_re_picante
-🔸 Levantar el servidor
-bash
-Copiar código
-node app.js
-o en modo desarrollo:
 
-bash
-Copiar código
-npm run dev
-🟢 Servidor corriendo en: http://localhost:8080
+### 2️⃣ Frontend
 
-💻 Configuración del Frontend
-🔸 Instalación
-bash
-Copiar código
-cd front
-npm install
-🔸 Correr el servidor de Angular
-bash
-Copiar código
-ng serve
-🟡 Frontend disponible en: http://localhost:4200
+#En otra terminal, posicionate en la carpeta del frontend:
+   ```bash
+   cd front
 
-🚀 Endpoints de la API
-🔐 Autenticación
-Método	Endpoint	Descripción
-POST	/auth/register	Registra un nuevo usuario
-POST	/auth/login	Inicia sesión y devuelve token
 
-🧍 Jugadores
-Método	Endpoint	Descripción
-GET	/player	Obtiene todos los jugadores
-GET	/player/:id	Obtiene un jugador por ID
-POST	/player	Crea un nuevo jugador
-PUT	/player/:id	Edita un jugador existente
-DELETE	/player/:id	Elimina un jugador
+#Iniciá el servidor de Angular con:
+   ```bash
+   ng serve
 
-🧠 Tecnologías Utilizadas
-Backend
 
-Node.js
+Accedé a la aplicación desde tu navegador: http://localhost:4200/
 
-Express
 
-MySQL
+⚠️ Importante: la app debe ejecutarse exactamente en http://localhost:4200/ para que funcione correctamente la conexión con el backend.
 
-JWT (autenticación)
+🔐 Login
 
-Express Validator
+#Para acceder a la aplicación, utilizá las siguientes credenciales:
 
-Frontend
+   ```bash
+   Usuario: juampi
+   Contraseña: medina123
+
+
+| Método   | Endpoint                           | Descripción                               |
+| :------- | :--------------------------------- | :---------------------------------------- |
+| `GET`    | `http://localhost:8080/player`     | Obtiene todos los jugadores               |
+| `GET`    | `http://localhost:8080/player/:id` | Obtiene un jugador específico             |
+| `POST`   | `http://localhost:8080/player`     | Crea un nuevo jugador                     |
+| `PUT`    | `http://localhost:8080/player/:id` | Actualiza los datos de un jugador         |
+| `POST`   | `http://localhost:8080/login`      | Inicia sesión                             |
+
+📦 Funcionalidades principales
+
+✅ Login de usuario
+El sistema requiere autenticarse antes de acceder al listado de jugadores.
+
+✅ Listado de jugadores
+Muestra todos los jugadores registrados en la base de datos.
+
+✅ Filtrado de jugadores
+Podés filtrar los jugadores por diferentes criterios (por ejemplo: posición, nacionalidad, overall, etc).
+
+✅ Descarga en Excel (.xlsx)
+Cuenta con un botón que permite descargar únicamente los jugadores filtrados en un archivo Excel.
+
+✅ Interfaz moderna y responsive
+Desarrollada con Angular 20 y estilos adaptativos.
+
+⚙️ Tecnologías utilizadas
+
+Frontend:
 
 Angular 20
 
 TypeScript
 
-SCSS / HTML
+HTML5 / SCSS
 
-Servicios HTTP
+Chart.js (para gráficos)
 
-🧩 Ejemplo de ejecución
-Abrí dos terminales:
+Backend:
 
-Terminal 1:
+Node.js
 
-bash
-Copiar código
-cd back
-npm run dev
-Terminal 2:
+Express.js
 
-bash
-Copiar código
-cd front
-ng serve
-Ingresá a:
-👉 http://localhost:4200
+MySQL
 
-🧾 Autor
+Extras:
+
+FileSaver.js (para descarga de archivos Excel)
+
+XLSX.js
+
+💡 Ejemplo de uso
+
+Iniciá el backend (node app.js)
+
+Iniciá el frontend (ng serve)
+
+Accedé a http://localhost:4200/
+
+Iniciá sesión con el usuario juampi
+
+Filtrá los jugadores
+
+Descargá el listado filtrado en formato .xlsx
+
+🧑‍💻 Autor
+
 Juan Pablo Medina
-Desarrollador Front-End
-📍 Córdoba, Argentina
-🔗 GitHub
-
-yaml
-Copiar código
-
+Desarrollador Front-End | Córdoba, Argentina 🇦🇷
+📎 GitHub: juampimedina06
