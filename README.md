@@ -1,54 +1,51 @@
 # ⚽ FutManager
 
-Gestor de jugadores de fútbol hecho con **Node.js**, **Express**, **MySQL** y **Angular 20**.  
-Permite crear, editar, eliminar y ver jugadores con sus atributos FIFA completos.  
-Backend con API REST y frontend moderno para la gestión.
+**FutManager** es una aplicación completa (Full Stack) para la gestión de jugadores de fútbol, desarrollada con **Node.js**, **Express**, **MySQL** y **Angular 20**.  
+Permite **crear**, **editar**, **eliminar** y **listar** jugadores con todos sus atributos tipo FIFA.
 
 ---
 
-## 📁 Estructura del proyecto
+## 🧱 Estructura del Proyecto
 
-```bash
 FutManager/
 │
-├── back/                  # Backend (Node.js + Express)
-│   ├── app.js             # Punto de entrada
-│   ├── routes/            # Rutas de la API
-│   ├── controllers/       # Controladores
-│   ├── models/            # Modelos MySQL
-│   ├── middlewares/       # Middleware (auth, validaciones, etc.)
-│   ├── config/            # Configuración DB y entorno
-│   └── package.json
+├── back/ # Backend (Node.js + Express)
+│ ├── app.js # Punto de entrada del servidor
+│ ├── routes/ # Rutas de la API
+│ ├── controllers/ # Controladores
+│ ├── models/ # Modelos de base de datos
+│ ├── middlewares/ # Validaciones, auth, etc.
+│ ├── config/ # Configuraciones (DB, entorno)
+│ └── package.json
 │
-├── front/                 # Frontend (Angular 20)
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/
-│   │   │   ├── pages/
-│   │   │   ├── services/
-│   │   │   └── models/
-│   │   └── main.ts
-│   └── package.json
-│
-└── README.md
-🚀 Cómo correr el proyecto
-🛠 Backend
-Entrá al directorio del backend:
+└── front/ # Frontend (Angular 20)
+├── src/app/components/
+├── src/app/pages/
+├── src/app/services/
+├── src/app/models/
+├── main.ts
+└── package.json
 
-bash
+yaml
 Copiar código
+
+---
+
+## ⚙️ Configuración del Backend
+
+### 🔸 Instalación
+
+```bash
 cd back
-Instalá las dependencias:
-
-bash
-Copiar código
 npm install
-Creá la base de datos en MySQL:
+🔸 Base de datos MySQL
+Ejecutá en tu gestor de MySQL:
 
 sql
 Copiar código
 CREATE DATABASE futmanager;
-Configurá el archivo .env con tus credenciales:
+🔸 Archivo .env
+Creá un archivo .env dentro de la carpeta back/ con los siguientes valores:
 
 env
 Copiar código
@@ -58,146 +55,90 @@ DB_PASSWORD=tu_contraseña
 DB_NAME=futmanager
 PORT=8080
 JWT_SECRET=clave_re_picante
-Corré el servidor:
-
+🔸 Levantar el servidor
 bash
 Copiar código
 node app.js
-o, si usás nodemon:
+o en modo desarrollo:
 
 bash
 Copiar código
 npm run dev
-🟢 El backend arranca en:
-http://localhost:8080
+🟢 Servidor corriendo en: http://localhost:8080
 
-💻 Frontend
-Entrá al directorio del frontend:
-
+💻 Configuración del Frontend
+🔸 Instalación
 bash
 Copiar código
 cd front
-Instalá las dependencias:
-
-bash
-Copiar código
 npm install
-Corré Angular:
-
+🔸 Correr el servidor de Angular
 bash
 Copiar código
 ng serve
-🟢 El frontend arranca en:
-http://localhost:4200
+🟡 Frontend disponible en: http://localhost:4200
 
-🧩 Endpoints de la API
+🚀 Endpoints de la API
 🔐 Autenticación
-Método	Ruta	Descripción
+Método	Endpoint	Descripción
 POST	/auth/register	Registra un nuevo usuario
-POST	/auth/login	Inicia sesión y devuelve el token
+POST	/auth/login	Inicia sesión y devuelve token
 
-Ejemplo login:
-
-json
-Copiar código
-{
-  "email": "admin@example.com",
-  "password": "123456"
-}
-Respuesta:
-
-json
-Copiar código
-{
-  "token": "jwt_generado_aca"
-}
-⚽ Jugadores
-Método	Ruta	Descripción
-GET	/player	Lista todos los jugadores
+🧍 Jugadores
+Método	Endpoint	Descripción
+GET	/player	Obtiene todos los jugadores
 GET	/player/:id	Obtiene un jugador por ID
 POST	/player	Crea un nuevo jugador
 PUT	/player/:id	Edita un jugador existente
 DELETE	/player/:id	Elimina un jugador
 
-Ejemplo creación (POST /player):
-
-json
-Copiar código
-{
-  "name": "Lionel Messi",
-  "club_name": "Inter Miami",
-  "position": "RW",
-  "overall": 91,
-  "attacking_finishing": 94,
-  "attacking_short_passing": 89,
-  "defending_marking": 21,
-  "defending_standing_tackle": 20,
-  "fifa_version": "25",
-  "fifa_update": "2"
-}
-Respuesta esperada:
-
-json
-Copiar código
-{
-  "message": "Jugador creado exitosamente",
-  "player_id": 27
-}
-🔑 Token (JWT)
-Para las rutas protegidas (crear, editar o eliminar jugadores), se debe enviar el token en los headers:
-
-makefile
-Copiar código
-Authorization: Bearer <token>
-🧠 Notas útiles
-El campo overall no puede ser NULL, así que siempre hay que enviarlo al crear el jugador.
-
-Si te tira el error Field 'overall' doesn't have a default value, revisá que el campo no sea NOT NULL en la DB.
-
-Para probar la API podés usar Postman o Insomnia.
-
-El proyecto está pensado para correr backend en el puerto 8080 y frontend en el 4200.
-
-💬 Scripts disponibles
+🧠 Tecnologías Utilizadas
 Backend
-bash
-Copiar código
-npm start        # corre con node
-npm run dev      # corre con nodemon
-Frontend
-bash
-Copiar código
-ng serve         # levanta el proyecto Angular
-ng build         # genera la build de producción
-📦 Dependencias principales
-Backend
-express
 
-mysql2
+Node.js
 
-cors
+Express
 
-express-validator
+MySQL
 
-jsonwebtoken
+JWT (autenticación)
 
-dotenv
-
-nodemon (dev)
+Express Validator
 
 Frontend
-@angular/core
 
-@angular/router
+Angular 20
 
-rxjs
+TypeScript
 
-typescript
+SCSS / HTML
 
-scss
+Servicios HTTP
 
-👨‍💻 Autor
+🧩 Ejemplo de ejecución
+Abrí dos terminales:
+
+Terminal 1:
+
+bash
+Copiar código
+cd back
+npm run dev
+Terminal 2:
+
+bash
+Copiar código
+cd front
+ng serve
+Ingresá a:
+👉 http://localhost:4200
+
+🧾 Autor
 Juan Pablo Medina
-Desarrollador Front-End 💻
+Desarrollador Front-End
 📍 Córdoba, Argentina
-GitHub: juampimedina06
+🔗 GitHub
+
+yaml
+Copiar código
+
