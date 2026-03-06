@@ -11,49 +11,58 @@
 }
 
 .label {
-  color: #fff;
-  font-size: .8rem;
+  color: var(--text-primary);
+  font-size: 0.85rem;
   letter-spacing: 0.3px;
+  font-weight: 500;
 }
 
-.input_login{
-  background-color: #1b232c;
-  border-radius: 6px;
-  padding: 0.75rem;
-  color: #c9d1d9;
+.input_login {
+  background-color: var(--bg-main);
+  border-radius: 8px;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  /* Left padding for search icon */
+  color: var(--text-primary);
   font-size: 0.95rem;
   outline: none;
-  border: none;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.input_login:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 .input_login::placeholder {
-  color: #8b949e;
+  color: var(--text-secondary);
 }
 
 .input,
 .textarea {
   width: 100%;
-  color: #fff;
-  background-color: transparent;
-  border: 1.8px solid #ffffff3d;
-  border-radius: 6px;
-  padding: 0.7rem 1rem;
-  font-size: 15px;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .input:focus-visible,
 .textarea:focus-visible {
-  border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 3px color-mix(in srgb, #cdddf7 30%, transparent);
+  border-color: var(--accent-primary);
+  background-color: var(--bg-main);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: #ffffffaa;
-  font-size: 14px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
@@ -63,14 +72,14 @@
 }
 
 .input_error {
-  color: rgb(255, 54, 54);
+  color: var(--danger);
   font-size: 0.85rem;
   margin-top: -0.25rem;
 }
 
 @media (max-width: 768px) {
   .contenedor_labelInput {
-    max-width: 92%;
+    max-width: 100%;
     gap: 0.4rem;
     margin: 0;
   }
@@ -78,19 +87,21 @@
 
 @media (max-width: 480px) {
   .contenedor_labelInput {
-    max-width: 92%;
-    gap: 0.4rem;
-    margin: 0;
+    max-width: 100%;
   }
 
   .label {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .input,
-  .textarea {
-    font-size: 14px;
-    padding: 0.45rem 0.65rem;
+  .textarea,
+  .input_login {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .input_login {
+    padding-left: 2.2rem;
   }
 }
-

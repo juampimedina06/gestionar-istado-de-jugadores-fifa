@@ -54,210 +54,86 @@ body {
 //   ));
 // }
 
+:root {
+  /* Color Palette */
+  --bg-main: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-surface-hover: rgba(255, 255, 255, 0.03);
+  --accent-primary: #10b981;
+  --accent-hover: #059669;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  /* Additional Accents */
+  --action-view: #3b82f6; /* Blue for viewing */
+  --action-view-hover: #60a5fa;
+  --danger: #ef4444;
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  
+  /* Typography */
+  --font-family-base: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: #222222;
-
-  // Reset the user agent margin.
-  margin: 0;
-}
-/* You can add global styles to this file, and also import other style files */
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-family-base);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  margin: 0;
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--text-primary);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-main {
-  display: block;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0;
-}
-
-h2{
-  font-size: 1.5em;
-  margin: 0;
-}
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
+h1 { font-size: 2.25rem; font-weight: 700; }
+h2 { font-size: 1.5rem; font-weight: 600; }
 
 a {
-  background-color: transparent;
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline dotted;
+a:hover {
+  color: var(--accent-hover);
 }
 
-b,
-strong {
-  font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-img {
-  border-style: none;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
+button {
   font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-button,
-input {
-  overflow: visible;
+/* Custom Scrollbar for a more premium look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-button,
-select {
-  text-transform: none;
+::-webkit-scrollbar-track {
+  background: var(--bg-main); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 4px;
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
 }
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-textarea {
-  overflow: auto;
-}
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-details {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
-}
-
-html, body { height: 100%; }
-body { margin: 0; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
