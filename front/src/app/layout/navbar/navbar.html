@@ -8,17 +8,21 @@
 
   <nav class="navbar">
     <div class="contenedor_logo">
-      <img class="imagen_logo" routerLink="" src="/assets/logo_futbol.png" alt="">
-      <h2 class="titulo_logo" routerLink="">FutManager</h2>
+      <div class="contenido_logo">
+        <img class="imagen_logo" routerLink="" src="/assets/logo_futbol.png" alt="">
+        <h2 class="titulo_logo" routerLink="">FutManager</h2>
+      </div>
       <div class="contenedor_nav">
-      <ul class="contenedor_li">
-        <li class="li" routerLink="">Jugadores</li>
-        <li class="li" routerLink="subir-player">Subir jugador</li>
-      </ul>
-    </div>    
+        <ul class="contenedor_li">
+          <li class="li" routerLink="">Jugadores</li>
+          <li class="li" routerLink="subir-player">Subir jugador</li>
+        </ul>
+      </div>
+      <button class="boton_cerrarsession" (click)="cerrarSesion()">cerrar sesion</button>
+
     </div>
 
-    
-  
+
+
   </nav>
 </header>
