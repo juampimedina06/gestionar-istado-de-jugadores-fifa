@@ -1,121 +1,116 @@
-## 🙋‍♂️ Presentación
+# ⚽ FIFA List - Sistema de Gestión Full Stack
 
-Hola! Soy **Juan Pablo Medina**, desarrollador Front-End de Córdoba, Argentina 🇦🇷, tengo 19 años y estudio desarrollo de software en itsc, elegi el proyecto FIFA HOMBRES, e documentado el proyecto por tiktok de forma organica
-#link: https://www.tiktok.com/@juampi.medina7
+[![Angular](https://img.shields.io/badge/Angular-20.3-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express.js-5.1-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Sequelize](https://img.shields.io/badge/Sequelize-6.37-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white)](https://sequelize.org/)
 
-# ⚽ LISTADO FIFA - Proyecto Full Stack
-
-Aplicación desarrollada con **Node.js**, **Express**, **MySQL** y **Angular**, que permite gestionar un listado de jugadores, filtrarlos y descargar la información en formato **.xlsx**.  
-Incluye autenticación de usuario y manejo de datos dinámico desde una API REST.
+Una robusta aplicación Full Stack de nivel empresarial diseñada para la gestión de datos de jugadores de fútbol profesionales. Construida con una arquitectura moderna, enfocada en la escalabilidad, el código limpio y la experiencia del usuario.
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## 📸 Vista General
 
-### 1️⃣ Backend
-1. Abrí una terminal y posicionate en la carpeta del **backend**:
-   ```bash
-   cd back
+![Placeholder del Dashboard del Proyecto](https://via.placeholder.com/800x400?text=Vista+Previa+de+FIFA+List)
+*Gestión integral de jugadores con filtrado en tiempo real y exportación de datos.*
 
-2.
-### Ejecutá el servidor con:
+---
 
-   node app.js
+## ✨ Características Principales
 
-3.
-### El backend se ejecutará en:
+- 🔐 **Autenticación Segura**: Sistema de login basado en JWT con hashing de contraseñas mediante bcrypt.
+- 📊 **Visualización Dinámica de Datos**: Integración de Chart.js para estadísticas de jugadores y métricas de rendimiento.
+- ⚡ **Filtrado Avanzado**: Filtrado del lado del cliente por posición, nacionalidad y valoraciones generales (overall).
+- 📂 **Exportación a Excel**: Extracción de datos de alto rendimiento a formato `.xlsx` utilizando `XLSX.js`.
+- 📱 **Diseño Responsive**: Enfoque mobile-first utilizando Angular Material y SCSS personalizado.
+- 🛡️ **Validación Robusta**: Validación de peticiones del lado del servidor mediante `express-validator`.
 
-   http://localhost:8080/
+---
 
+## 🏗️ Arquitectura y Stack Técnico
 
-### 2️⃣ Frontend
+El proyecto sigue una arquitectura desacoplada **Cliente-Servidor** para garantizar la mantenibilidad y la separación de responsabilidades.
 
-#En otra terminal, posicionate en la carpeta del frontend:
-   cd front
+### Backend (Node.js/Express)
+- **Patrón**: Controller-Service-Model (CSM).
+- **ORM**: Sequelize para la abstracción de MySQL.
+- **Seguridad**: CORS habilitado, JWT para el manejo de sesiones y Variables de Entorno para la configuración.
 
+### Frontend (Angular 20)
+- **Paradigma**: Arquitectura basada en componentes.
+- **Estilos**: SCSS con estructura modular.
+- **Gestión de Estado**: Programación reactiva con RxJS.
 
-#Iniciá el servidor de Angular con:
-   ng serve
+---
 
+## 🚀 Comenzando
 
-Accedé a la aplicación desde tu navegador: http://localhost:4200/
+### Requisitos Previos
+- **Node.js**: v22.x o superior.
+- **MySQL**: v8.0 o superior.
+- **Angular CLI**: `npm install -g @angular/cli`.
 
+### 1️⃣ Configuración de la Base de Datos
+Crea una base de datos llamada `fifa_local` en tu servidor MySQL.
+```sql
+CREATE DATABASE fifa_local;
+```
 
-⚠️ Importante: la app debe ejecutarse exactamente en http://localhost:4200/ para que funcione correctamente la conexión con el backend.
+### 2️⃣ Instalación del Backend
+```bash
+cd back
+npm install
+```
+Configura tu archivo `.env` (si no está presente, la configuración estándar utiliza `localhost:3306`).
+```bash
+npm run dev
+```
+*El servidor se inicia en `http://localhost:8080`.*
 
-🔐 Login
+### 3️⃣ Instalación del Frontend
+```bash
+cd front
+npm install
+npm start
+```
+*Aplicación disponible en `http://localhost:4200`.*
 
-#Para acceder a la aplicación, utilizá las siguientes credenciales:
-   Usuario: juampi
-   Contraseña: medina123
+---
 
+## 🔌 Referencia de la API
 
-| Método   | Endpoint                           | Descripción                               |
-| :------- | :--------------------------------- | :---------------------------------------- |
-| `GET`    | `http://localhost:8080/player`     | Obtiene todos los jugadores               |
-| `GET`    | `http://localhost:8080/player/:id` | Obtiene un jugador específico             |
-| `POST`   | `http://localhost:8080/player`     | Crea un nuevo jugador                     |
-| `PUT`    | `http://localhost:8080/player/:id` | Actualiza los datos de un jugador         |
-| `POST`   | `http://localhost:8080/login`      | Inicia sesión                             |
+### Autenticación
+| Método | Endpoint | Descripción |
+| :--- | :--- | :--- |
+| `POST` | `/login` | Autentica al usuario y devuelve un JWT. |
 
-📦 Funcionalidades principales
+### Gestión de Jugadores
+| Método | Endpoint | Descripción | Requiere Auth |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/player` | Obtiene todos los jugadores. | ✅ |
+| `GET` | `/player/:id` | Obtiene detalles de un jugador específico. | ✅ |
+| `POST` | `/player` | Crea un nuevo registro de jugador. | ✅ |
+| `PUT` | `/player/:id` | Actualiza los datos de un jugador existente. | ✅ |
 
-✅ Login de usuario
-El sistema requiere autenticarse antes de acceder al listado de jugadores.
+---
 
-✅ Listado de jugadores
-Muestra todos los jugadores registrados en la base de datos.
+## 🛠️ Herramientas de Desarrollo
+- **Linter**: Prettier para un formateo de código consistente.
+- **Testing**: Jasmine & Karma para pruebas unitarias en el Frontend.
+- **Diseño**: Angular Material para componentes de UI premium.
 
-✅ Filtrado de jugadores
-Podés filtrar los jugadores por diferentes criterios (por ejemplo: posición, nacionalidad, overall, etc).
+---
 
-✅ Descarga en Excel (.xlsx)
-Cuenta con un botón que permite descargar únicamente los jugadores filtrados en un archivo Excel.
+## 🧑‍💻 Autor
 
-✅ Interfaz moderna y responsive
-Desarrollada con Angular 20 y estilos adaptativos.
+**Juan Pablo Medina**
+*Estudiante de Desarrollo de Software @ ITSC | Córdoba, Argentina*
 
-⚙️ Aprenzidajes logrados
+- 📱 [Viaje en TikTok](https://www.tiktok.com/@juampi.medina7)
+- 💼 [LinkedIn](https://www.linkedin.com/in/juampimedina7/)
 
-Frontend:
+---
 
-Angular 20
-
-TypeScript
-
-HTML5 / SCSS
-
-Chart.js (para gráficos)
-
-Backend:
-
-Node.js
-
-Express.js
-
-MySQL
-
-Extras:
-
-FileSaver.js (para descarga de archivos Excel)
-
-XLSX.js
-
-💡 Ejemplo de uso
-
-Iniciá el backend (node app.js)
-
-Iniciá el frontend (ng serve)
-
-Accedé a http://localhost:4200/
-
-Iniciá sesión con el usuario juampi
-
-Filtrá los jugadores
-
-Descargá el listado filtrado en formato .xlsx
-
-🧑‍💻 Autor
-
-Juan Pablo Medina
-Desarrollador Front-End | Córdoba, Argentina 🇦🇷
+## 📄 Licencia
+Este proyecto es para fines educativos. Todos los derechos reservados.
